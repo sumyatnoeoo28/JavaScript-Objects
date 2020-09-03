@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Methods</title>
+  </head>
+<body>
+  <h2>JavaScript Array Methods</h2> 
+  <h2>toString()</h2>
+  <p id="student"></p>
+  <h2>join()</h2>
+  <p id="student1"></p>
+  <h2>pop()</h2>
+  <button onclick="myFunction1()">Pop it</button>
+  <p id="student2"></p>
+  <h2>push()</h2>
+  <button onclick="myFunction2()">Push it</button>
+  <p id="student3"></p>
+  <h2>shift()</h2>
+  <button onclick="myFunction3()">Shift it</button>
+  <p id="student4"></p>
+  <h2>unshift()</h2>
+  <button onclick="myFunction4()">Unshift it</button>
+  <p id="student5"></p>
+  <h2>splice()</h2>
+  <button onclick="myFunction5()">Splice it</button>
+  <p id="student6"></p>
+  <script>
+    var student = {
+      id: 1,
+      name: "Mhone Lay",
+      address: "Shan State",
+      age:""
+    };
+    var student1 = ["1", "Mhone Lay", "Shan State"];
+    document.getElementById("student").innerHTML = student.id.toString() + " " + student.name.toString()+ " " +student.address.toString();
+    document.getElementById("student1").innerHTML = student1.join(" * ");
+    function myFunction1() {
+    student1.pop(); 
+      document.getElementById("student2").innerHTML = student1;
+    }
+    function myFunction2() {
+      student1.push("single");
+      document.getElementById("student3").innerHTML = student1;
+    }
+    function myFunction3() {
+      student1.shift(); 
+      document.getElementById("student4").innerHTML = student1;
+    }
+    function myFunction4() {
+      student1.unshift("ucsy");
+      document.getElementById("student5").innerHTML = student1;
+    }
+    function myFunction5() {
+      student1.splice(0, 1);
+      document.getElementById("student6").innerHTML = student1;
+    }
+  </script>
+</body>
+</html>
