@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Iteration Methods</title>
+  </head>
+<body>
+  <h2>JavaScript Array.forEach()</h2>
+  <p id="demo1"></p>
+  <h2>JavaScript Array.map()</h2>
+  <p id="demo2"></p>
+  <h2>JavaScript Array.filter()</h2>
+  <p id="demo3"></p>
+  <h2>JavaScript Array.reduce()</h2>
+  <p id="demo4"></p>
+  <h2>JavaScript Array.every()</h2>
+  <p id="demo5"></p>
+  <h2>JavaScript Array.indexOf()</h2>
+  <p id="demo6"></p>
+  <h2>JavaScript Array.lastIndexOf()</h2>
+  <p id="demo7"></p>
+  <h2>JavaScript Array.find()</h2>
+  <p id="demo8"></p>
+  <h2>JavaScript Array.findIndex()</h2>
+  <p id="demo9"></p>
+  <script>
+    var txt = "";
+    var numbers = [45, 4, 9, 16, 25];
+    var numbers2 = numbers.map(myFunction2);
+    var over18 = numbers.filter(myFunction3);
+    var sum = numbers.reduce(myFunction4);
+    var allOver18 = numbers.every(myFunction5);
+    var a = numbers.indexOf(45);
+    var b = numbers.lastIndexOf(45);
+    var first = numbers.find(myFunction6);
+    var first1 = numbers.findIndex(myFunction7);
+    numbers.forEach(myFunction1);
+    document.getElementById("demo1").innerHTML = txt;
+    document.getElementById("demo2").innerHTML = numbers2;
+    document.getElementById("demo3").innerHTML = over18;
+    document.getElementById("demo4").innerHTML = "The sum is " + sum;
+    document.getElementById("demo5").innerHTML = "All over 18 is " + allOver18;
+    document.getElementById("demo6").innerHTML = "45 is found in position " + a;
+    document.getElementById("demo7").innerHTML = "45 is found in position " + (a + 1);
+    document.getElementById("demo8").innerHTML = "First number over 18 is " + first;
+    document.getElementById("demo9").innerHTML = "First number over 18 has index " + first1;
+    function myFunction1(value) {
+      txt = txt + value + "<br>"; 
+    }
+    function myFunction2(value) {
+      return value * 2;
+    }
+    function myFunction3(value) {
+      return value > 18;
+    }
+    function myFunction4(total, value) {
+      return total + value;
+    }
+    function myFunction5(value) {
+      return value > 18;
+    }
+    function myFunction6(value) {
+      return value > 18;
+    }
+    function myFunction7(value) {
+      return value > 18;
+    }
+  </script>
+</body>
+</html>

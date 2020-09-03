@@ -26,35 +26,46 @@
   <h2>splice()</h2>
   <button onclick="myFunction5()">Splice it</button>
   <p id="student6"></p>
+  <h2>concat()</h2>
+  <p id="family"></p>
+  <h2>slice()</h2>
+  <p id="family1"></p>
   <script>
     var student = {
-      id: 1,
-      name: "Mhone Lay",
-      address: "Shan State",
-      age:""
+    id: 1,
+    name: "Mhone Lay",
+    address: "Shan State",
+    age:""
     };
     var student1 = ["1", "Mhone Lay", "Shan State"];
     document.getElementById("student").innerHTML = student.id.toString() + " " + student.name.toString()+ " " +student.address.toString();
     document.getElementById("student1").innerHTML = student1.join(" * ");
+    var arr1 = ["Cecilie", "Lone"];
+    var arr2 = ["Emil", "Tobias", "Linus"];
+    var arr3 = ["Robin", "Morgan"];
+    var myChildren = arr1.concat(arr2, arr3); 
+    var family = myChildren.slice(1,3);
+    document.getElementById("family").innerHTML = myChildren;
+    document.getElementById("family1").innerHTML = myChildren + "<br><br>" + family;
     function myFunction1() {
     student1.pop(); 
-      document.getElementById("student2").innerHTML = student1;
+    document.getElementById("student2").innerHTML = student1;
     }
     function myFunction2() {
-      student1.push("single");
-      document.getElementById("student3").innerHTML = student1;
+    student1.push("single");
+    document.getElementById("student3").innerHTML = student1;
     }
     function myFunction3() {
-      student1.shift(); 
-      document.getElementById("student4").innerHTML = student1;
+    student1.shift(); 
+    document.getElementById("student4").innerHTML = student1;
     }
     function myFunction4() {
-      student1.unshift("ucsy");
-      document.getElementById("student5").innerHTML = student1;
+    student1.unshift("ucsy");
+    document.getElementById("student5").innerHTML = student1;
     }
     function myFunction5() {
-      student1.splice(0, 1);
-      document.getElementById("student6").innerHTML = student1;
+    student1.splice(0, 1);
+    document.getElementById("student6").innerHTML = student1;
     }
   </script>
 </body>

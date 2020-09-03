@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Statement - For...In</title>
+  </head>
+<body>
+  <h2>JavaScript Statement - For...In</h2>
+  <script>
+    const object = { a: 1, b: 2, c: 3 };
+    for (const property in object) {
+      console.log(`${property}: ${object[property]}`);
+    }
+    var obj = {a: 10, b: 20, c: 30};  
+    for (const prop in obj) {
+      console.log(`obj.${prop} = ${obj[prop]}`);
+    }
+    var color = {a: 1, b: 2, c: 3};
+    function ColoredTriangle() {
+      this.color = 'pink';
+    }
+    ColoredTriangle.prototype = color;
+    var obj = new ColoredTriangle();
+    for (const prop in obj) {
+      if (obj.hasOwnProperty(prop)) {
+        console.log(`obj.${prop} = ${obj[prop]}`);
+      } 
+    }
+    var data = {a: 100, b: 200, c: 300};
+    for (var i = 0 in data) {
+      console.log(data[i]);
+    }
+  </script>
+</body>
+</html>
