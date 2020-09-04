@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Testing2</title>
+  </head>
+<body>
+  <h2>findByName()</h2>
+  <p id="test1"></p>
+  <h2>getTotalMarkOfStudents()</h2>
+  <p id="test2"></p>
+  <h2>addFullName()</h2>
+  <p id="test3"></p>
+  <script>
+    var student = [
+      {name:"Thae Zarli", year: 1998, mark: 90},
+      {name:"Zon Myat", year: 1997, mark: 99},
+      {name:"Su Myat", year: 1998, mark: 95},
+    ];
+    var result = student.find(findByName);
+    console.log(result);
+    document.getElementById("test1").innerHTML =  result.name + " ," + result.year+ " ," + result.mark;
+  
+    /*find each student record by parameter
+    return object */
+    function findByName(value) {
+      return value.name === "Su Myat";
+    }
+
+    /*sum all student total marks by parameter */
+    // var totalMark = student.reduce((student, {mark}) => student + mark, 0);
+    // console.log(totalMark);
+    // document.getElementById("test2").innerHTML =  "Student total marks = " + totalMark;
+
+    /*sum all student total marks by two parameter
+    return total mark */
+    function getTotalMark() {
+      var totalMark = student.reduce((total, student) => {
+        return total + student.mark
+      }, 0);
+      console.log(totalMark);
+      document.getElementById("test2").innerHTML =  "Student total marks = " + totalMark;
+    }
+    getTotalMark();
+
+    /*find student index  by two parameter
+    return student name */
+    function addFullName(firstName, secondName) {
+      var index = student.findIndex((student) => {
+        return student.name == firstName;
+      });
+      student[index].name = student[index].name + " " + secondName;
+      console.log(student);
+      document.getElementById("test3").innerHTML =  student[0].name + " " + student[0].year + " " + student[0].mark + "<br>" +
+      student[1].name + " " + student[1].year + " " + student[1].mark + "<br>" +
+      student[2].name + " " + student[2].year + " " + student[2].mark;
+    }
+    addFullName("Su Myat","Noe Oo");
+  </script>
+</body>
+</html>
