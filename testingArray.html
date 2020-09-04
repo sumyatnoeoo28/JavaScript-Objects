@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Testing</title>
+  </head>
+<body>
+  <h2>add each array year value by 5</h2>
+  <button onclick="addYear()">Add Year</button>
+  <p id="add"></p>
+  <p id="add1"></p>
+  <h2>Student Detail</h2>
+  <button onclick="showStudentDetail()">DETAIL</button>
+  <p id="add2"></p>
+  <h2>Show Only Years</h2>
+  <button onclick="showYear()">Show only years</button>
+  <p id="add3"></p>
+  <script>
+    var student = [
+      {name:"Snow", year:1998},
+      {name:"Myat", year:1994},
+      {name:"Mhone Lay", year:1995},
+    ];
+    displayResult();
+    /*after Add Year button click */
+    function addYear() {
+      var student2 = student.map(myFunction);
+      document.getElementById("add1").innerHTML = student2;
+    }
+    /*show array list initial state  */
+    function displayResult() {
+      document.getElementById("add").innerHTML =
+      student[0].name + " " + student[0].year + "<br>" +
+      student[1].name + " " + student[1].year + "<br>" +
+      student[2].name + " " + student[2].year;
+    }
+    /*add 5 year for each array
+    return object */
+    function myFunction(value) {
+      return value.name + " " + (value.year + 5);
+    }
+    /*after DETAIL button click */
+    function showStudentDetail() {
+      var student2 = student.find(findStudent);
+      document.getElementById("add2").innerHTML =
+      student2.name + " " + student2.year;
+    }
+    /*find specific student record by parameter
+    return object */
+    function findStudent(student) { 
+      return student.name === "Snow";
+    }
+    /*after Show only years button click */
+    var txt = "";
+    function showYear() {
+      student.forEach(studentYear);
+      document.getElementById("add3").innerHTML = txt;
+    }
+    /*retrieve year by parameter
+    return object */
+    function studentYear(value) {
+      return txt = txt + value.year + "<br>"; 
+    }
+  </script>
+</body>
+</html>
