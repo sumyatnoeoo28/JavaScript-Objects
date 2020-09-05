@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Testing2</title>
+  </head>
+<body>
+  <h2>Show Student List</h2>
+  <p id="test1"></p>
+  <h2>averageTotalMark()</h2>
+  <p id="test2"></p>
+  <h2>Find Student</h2>
+  <p id="test3"></p>
+  <h2>Greater than 1996 year</h2>
+  <p id="test4"></p>
+  <script>
+    var student = [
+      {name:"Thae Zarli", year: 1998, mark: 90},
+      {name:"Zon Myat", year: 1997, mark: 99},
+      {name:"Su Myat", year: 1998, mark: 95},
+    ];
+    /*show student list */
+    function getStudentList() {
+      console.log(student);
+      document.getElementById("test1").innerHTML =
+      student[0].name + " " + student[0].year + " " + student[0].mark + "<br>" +
+      student[1].name + " " + student[1].year + " " + student[1].mark + "<br>" +
+      student[2].name + " " + student[2].year + " " + student[2].mark;
+    }
+    getStudentList();
+
+    /*average all student total marks by two parameter
+    return average mark */
+    function averageTotalMark() {
+      var averageMark = (student.reduce((total, student) => {
+        return total + student.mark
+      }, 0))/3;
+      console.log(averageMark);
+      document.getElementById("test2").innerHTML =  "Student average total marks = " + averageMark;
+    }
+    averageTotalMark();
+
+    /*find some student by parameter
+    return boolean */
+    function findStudent() {
+      var result = student.some((value) => {
+        return value.name === "Su Myat";
+      })
+      console.log(result);
+      document.getElementById("test3").innerHTML = "student found  = " + result ;
+    }
+    findStudent();
+
+    /*find every student greater than 1996 year by parameter
+    return boolean */
+    function findYear() {
+      var result = student.every((value) => {
+        return value.year > 1996;
+      })
+      console.log(result);
+      document.getElementById("test4").innerHTML = "year found = " + result ;
+    }
+    findYear();
+  </script>
+</body>
+</html>
